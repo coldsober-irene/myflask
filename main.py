@@ -59,15 +59,15 @@ def advanced():
             """
 @app.route('/birthday', methods = ['POST', 'GET'])
 def calcBirthDay():
-    if request.method == 'POST':
+    if request.method == 'POST': # USER SUBMITTING OR POSITING HIS INFORMATION
         return f"""
-        <form action = "/birthday" method = "POST">
+        <form action = "/birthday" method = "POST"> 
                 <input type = "number" name = "year" placeholder = "Birthyear e.g 2022">
                 <input type = "submit" value = "Submit">
         </form>
         birth year is <strong><mark>{request.form.get('year')}</mark></strong> and your age is: <h2>{2022 - int(request.form.get('year'))}</h2>
         """
-    elif request.method == 'GET':
+    elif request.method == 'GET': # USER ASKING FOR THE FORM
         return """
                 <form action = "/birthday" method = "POST">
                 <input type = "number" name = "year" placeholder = "Birthyear e.g 2022">
